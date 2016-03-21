@@ -237,6 +237,7 @@
           return d.toISOString().split('T')[0];
       }
       
+      
          $('#run_query').on('click', function(e, survey) {
            $('#run_query').html("Please Wait...").prop("disabled",true);
            dateRange = dateSelect.MPDatepicker('value');
@@ -253,7 +254,6 @@
           var queryParams = {
             from_date: date_to_string(dateRange.from),
             to_date: date_to_string(dateRange.to)
-            dateRange
           };
           var script = $('#cq').html();
           script = $.trim(script);
