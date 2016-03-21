@@ -247,7 +247,8 @@
        $("body").delegate( "#csv_export", "click", function() {
             var csv = "data:text/csv;charset=utf-8," + json_to_csv.jsonToCSV(last_response);
             $(this).attr("href", encodeURI(csv)).attr("download", 
-                  "Survey_Export_" + survey_id + "_" + moment().format('MMM-DD-YYYY') + ".csv");
+                  "Feedback_Export_" + date_to_string(dateRange.from) + "_" + 
+                  date_to_string(dateRange.to) + ".csv");
         });
           
         var runQuery = function() {
