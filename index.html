@@ -280,8 +280,8 @@
       function main() {
         return join(
           Events({
-            from_date: params.dateRange.from,
-            to_date:   params.dateRange.to
+            from_date: params.from_date,
+            to_date:   params.to_date
           }),
           People()
         ).filter(function(tuple){
