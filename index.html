@@ -286,7 +286,7 @@
           }),
           People()
         ).filter(function(tuple){
-          return tuple.event.name == 'ContactRequested' && tuple.event;
+          return tuple.event && tuple.event.name == 'ContactRequested';
         }).map(function(tuple) {
           return {
             "Distinct ID": tuple.event.distinct_id,
