@@ -99,11 +99,7 @@
           }
         }).groupBy(
     [
-      "Date",
-      function(info) {
-        return info;
-      }
-    ],
+      "Date"    ],
     mixpanel.reducer.count()
   );
       }
