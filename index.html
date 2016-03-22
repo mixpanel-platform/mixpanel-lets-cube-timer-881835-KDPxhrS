@@ -86,7 +86,7 @@
           return tuple.event && tuple.event.name == 'ContactRequested';
         }).map(function(tuple) {
           return {
-            "Date": tuple.event.time,
+            "Date": new Date(tuple.event.time),
             "Distinct ID": tuple.event.distinct_id,
             "Email": tuple.user ? tuple.user.properties.$email : "",
             "Name": tuple.user ? tuple.user.properties.$name : "",
@@ -98,6 +98,7 @@
             "Feedback": tuple.event.properties.ContactContent
           }
         })
+      }
     </script>
   </body>
 </html>
