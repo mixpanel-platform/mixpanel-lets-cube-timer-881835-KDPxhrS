@@ -7,11 +7,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="json_csv.js"></script>
-
     <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
-    <script>
-     
-    </script>
   </head>
   <body class="mixpanel-platform-body">
     <div class="mixpanel-platform-section">
@@ -22,6 +18,7 @@
       </div>
       <a style="display:none;" class="button button_primary" id="csv_export" href="#">Export to CSV</a>
     </div>
+    <div id="table_data" style="clear: both;"></div>
     <script>
       var json_to_csv = new json2csv();
       var survey_id;
@@ -58,6 +55,12 @@
                 $('#run_query').html("Run Query").prop("disabled",false);
                 last_response = resp;
                 $('#csv_export').show();
+                
+                $('#table_data').appendTo('body').MPTable({ // create table; try scrolling horizontally over demo below
+            data: resp,
+            showPercentages: true,
+            firstColHeader: 'Date'
+        });
                 
             }).fail(function($xhr) {
                 $('#run_query').html("Run Query").prop("disabled",false);
