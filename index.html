@@ -55,12 +55,10 @@
                 $('#run_query').html("Run Query").prop("disabled",false);
                 last_response = resp;
                 $('#csv_export').show();
-                
-                $('#table_data').appendTo('body').MPTable({ // create table; try scrolling horizontally over demo below
-            data: resp,
-            firstColHeader: 'Date'
-        });
-                
+                // create table; try scrolling horizontally over demo below
+                $('#table_data').appendTo('body').MPTable({ 
+                    data: resp
+                });
             }).fail(function($xhr) {
                 $('#run_query').html("Run Query").prop("disabled",false);
                 // Somehow the request is not parsed into JSON event with application/json header
