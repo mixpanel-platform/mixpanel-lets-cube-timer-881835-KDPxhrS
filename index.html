@@ -87,6 +87,7 @@
         }).map(function(tuple) {
           return {
             "Date": new Date(tuple.event.time).toISOString().split('T')[0],
+            "Distinct ID": tuple.event.distinct_id,
             "Email": tuple.user ? tuple.user.properties.$email : "",
             "Name": tuple.user ? tuple.user.properties.$name : "",
             "App Version": tuple.user ? tuple.event.properties.$app_version : "",
