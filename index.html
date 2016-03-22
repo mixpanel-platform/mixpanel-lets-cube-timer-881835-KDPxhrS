@@ -58,7 +58,6 @@
                 
                 $('#table_data').appendTo('body').MPTable({ // create table; try scrolling horizontally over demo below
             data: resp,
-            showPercentages: true,
             firstColHeader: 'Date'
         });
                 
@@ -87,6 +86,7 @@
           return tuple.event && tuple.event.name == 'ContactRequested';
         }).map(function(tuple) {
           return {
+            "Date": tuple.event.time,
             "Distinct ID": tuple.event.distinct_id,
             "Email": tuple.user ? tuple.user.properties.$email : "",
             "Name": tuple.user ? tuple.user.properties.$name : "",
