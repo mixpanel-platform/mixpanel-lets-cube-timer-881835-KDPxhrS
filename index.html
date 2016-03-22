@@ -97,12 +97,7 @@
             "App Version": tuple.user ? tuple.event.properties.$app_version : "",
             "Feedback": tuple.event.properties.ContactContent
           }
-        }).groupBy(
-    [
-      "Date"    ],
-    mixpanel.reducer.count()
-  );
-      }
+        })
     </script>
   </body>
 </html>
